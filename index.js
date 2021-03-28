@@ -6,7 +6,7 @@ function newTask(value, isCompleted = false) {
   let task = document.createElement("div");
   task.className = "task border rounded p-2 d-flex align-items-center";
   task.innerHTML = `
-                    <input
+                  <input
                     class="form-check-input me-2"
                     type="checkbox"
                     value="task-id-complete"
@@ -43,6 +43,11 @@ document.addEventListener("keypress", event => {
   if (event.code == "Enter" && newTaskDesc.value !== "") {
     newTask(newTaskDesc.value);
     newTaskDesc.value = "";
+  }
+
+  if (event.code === "Slash") {
+    event.preventDefault();
+    newTaskDesc.focus();
   }
 
   return null;
