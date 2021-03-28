@@ -27,16 +27,17 @@ function newTask(value, isCompleted = false) {
 
   task.querySelector("button.btn-close").addEventListener("click", event => {
     task.remove(task);
+    if (!tasks.hasChildNodes()) tasks.classList.remove("border");
   });
 
   tasks.prepend(task);
+  if (!tasks.classList.contains("border")) tasks.classList += " border";
 }
 
 addTaskBtn.addEventListener("click", () => {
   if (newTaskDesc.value === "") alert("Please enter something!!");
   else newTask(newTaskDesc.value);
   newTaskDesc.value = "";
-  return null;
 });
 
 document.addEventListener("keypress", event => {
@@ -49,6 +50,4 @@ document.addEventListener("keypress", event => {
     event.preventDefault();
     newTaskDesc.focus();
   }
-
-  return null;
 });
