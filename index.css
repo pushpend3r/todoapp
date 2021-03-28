@@ -1,0 +1,7 @@
+.task .form-check-input:checked + .taskdesc {
+  text-decoration: line-through;
+}
+
+.container {
+  max-width: 750px;
+}
