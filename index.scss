@@ -1,4 +1,18 @@
+body {
+  background-color: #e5e5f7;
+  opacity: 1;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #e5e5f7 20px
+    ),
+    repeating-linear-gradient(#fdfdfd55, #cccef0);
+
+  min-height: 100vh;
+}
+
 .task {
+  background-color: #fff;
   .form-check-input:checked + .taskdesc {
     text-decoration: line-through;
   }

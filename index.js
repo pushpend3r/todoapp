@@ -27,11 +27,17 @@ function newTask(value, isCompleted = false) {
 
   task.querySelector("button.btn-close").addEventListener("click", event => {
     task.remove(task);
-    if (!tasks.hasChildNodes()) tasks.classList.remove("border");
+    if (!tasks.hasChildNodes()) {
+      tasks.classList.remove("border");
+      tasks.style.backgroundColor = "rgba(0,0,0,0)";
+    }
   });
 
   tasks.prepend(task);
-  if (!tasks.classList.contains("border")) tasks.classList += " border";
+  if (!tasks.classList.contains("border")) {
+    tasks.classList += " border";
+    tasks.style.backgroundColor = "#fff";
+  }
 }
 
 addTaskBtn.addEventListener("click", () => {
